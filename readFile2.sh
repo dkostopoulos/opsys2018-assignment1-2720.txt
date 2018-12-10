@@ -12,9 +12,9 @@ fi
 #create the directories and unzip the files
 mkdir -p $resources
 mkdir -p $assignments
-tar xzf $1 -C $resources
+tar xz $1 -C $resources
 cd $resources
-#find all the simple text files (.txt) get the line starts with https
+#finding all the simple text files
 for i in `find . -type f -name "*.txt"`; do
   gitUrl=`cat $i | grep "^https" | head -1`
   if [ "$gitUrl" != "" ]; then
