@@ -20,7 +20,7 @@ calculateAFile()
   else #if url working
     mde=($(md5sum $2))
     previousSum=($(cat $finalFile | grep $1))
-    if [ "${previousSum[1]}" == "" ]; then #didn't find the that page from the previous run
+    if [ "${previousSum[1]}" == "" ]; then #didn't find this before each previous run
       echo $i INIT
     elif [ "$md5" != "${previousSum[1]}" ]; then #the pages have changed from the previous run of the script
       echo $1
